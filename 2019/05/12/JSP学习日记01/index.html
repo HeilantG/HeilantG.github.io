@@ -30,7 +30,7 @@
 <meta property="og:description" content="JSP学习日记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/874710/201702/874710-20170223201541929-446724328.png">
-<meta property="og:updated_time" content="2019-05-12T04:14:18.288Z">
+<meta property="og:updated_time" content="2019-05-12T04:27:00.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP学习日记01">
 <meta name="twitter:description" content="JSP学习日记">
@@ -160,7 +160,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是JSP-它和JavaScript有什么关系"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是JSP,它和JavaScript有什么关系?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP首行的意义"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">JSP首行的意义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaWeb三层结构"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">JavaWeb三层结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#servlet-层"><span class="post-toc-number">2.</span> <span class="post-toc-text">servlet 层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#servlet-doGet-doPost方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">servlet doGet/doPost方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#doGet"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">doGet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#doPost"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">doPost</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是JSP-它和JavaScript有什么关系"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是JSP,它和JavaScript有什么关系?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP首行的意义"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">JSP首行的意义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaWeb三层结构"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">JavaWeb三层结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#servlet-层"><span class="post-toc-number">2.</span> <span class="post-toc-text">servlet 层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#servlet-doGet-doPost方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">servlet doGet/doPost方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#doGet"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">doGet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#doPost"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">doPost</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他的东西"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他的东西</span></a></li></ol>
         </nav>
     </aside>
 
@@ -200,6 +200,7 @@
 <p>可以看到servlet是继承于HttpServlet的。所以其中的方法都是HttpServlet写好的，我们只需要进行重构。</p>
 <h2 id="servlet-doGet-doPost方法"><a href="#servlet-doGet-doPost方法" class="headerlink" title="servlet doGet/doPost方法"></a>servlet doGet/doPost方法</h2><h3 id="doGet"><a href="#doGet" class="headerlink" title="doGet"></a>doGet</h3><p>顾名思义，doGet是用来从页面中拿取数据的，使用这个方法时，会拿到Rqeusst和Response两个函数，这两个函数的反法就能完成与JSP页面的交互，常用方法如下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//从页面输入框/选择框获取数据（用 name的值</span><br><span class="line">request.getParameter(&quot;name&quot;);</span><br><span class="line">//向页面传输一个数据,name的值，就是页面接受时所写的值(特殊语法)</span><br><span class="line">request.setAttribute(&quot;name&quot;, o);</span><br><span class="line">//jsp页面标记是这样的</span><br><span class="line">$&#123;name&#125;</span><br><span class="line">//跳转页面(转发) 地址栏不变，参数自动传递</span><br><span class="line">requset.getRequestDispatcher(&quot;index.jsp&quot;).forward(request,response);</span><br><span class="line">//跳转页面(重定向) 重新发送请求，地址栏改变。参数不传递</span><br><span class="line">response.sendRequser(&quot;index.jsp&quot;)</span><br></pre></td></tr></table></figure></p>
 <h3 id="doPost"><a href="#doPost" class="headerlink" title="doPost"></a>doPost</h3><p>暂时没有用到，需要记住的就是再doGet之中呢那一句doGet(request,reponse)不能删除</p>
+<h2 id="其他的东西"><a href="#其他的东西" class="headerlink" title="其他的东西"></a>其他的东西</h2><p>最近心情一直不太好，可能是和她的一些矛盾吧，现在我；也不知道该真么处理，就这样吧，顺其自然吧。不强求也许就是最好的</p>
 
         </div>
 
@@ -208,7 +209,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-05-12T04:14:18.288Z" itemprop="dateUpdated">2019-05-12 12:14:18</time>
+    Last updated: <time datetime="2019-05-12T04:27:00.496Z" itemprop="dateUpdated">2019-05-12 12:27:00</time>
 </span><br>
 
 
