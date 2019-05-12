@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JAVA学习日记01 | HeilantG&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#282c34">
+    
+    
+    <meta name="keywords" content="学习,Java">
+    <meta name="description" content="Java笔记">
+<meta name="keywords" content="学习,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA学习日记01">
+<meta property="og:url" content="http://yoursite.com/2019/03/17/JAVA学习日记01/index.html">
+<meta property="og:site_name" content="HeilantG&#39;s Blog">
+<meta property="og:description" content="Java笔记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-17T14:41:05.990Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA学习日记01">
+<meta name="twitter:description" content="Java笔记">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">HeilantG</h5>
+          <a href="mailto:gongtongwei@gmail.com" title="gongtongwei@gmail.com" class="mail">gongtongwei@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/HeilantG" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JAVA学习日记01</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JAVA学习日记01</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-17T13:25:54.000Z" itemprop="datePublished" class="page-time">
+  2019-03-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Java继承"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是继承"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么要使用继承"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">为什么要使用继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实例"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">实例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#extends与implement"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">extends与implement</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#菜鸟教程的示例"><span class="post-toc-number">2.</span> <span class="post-toc-text">菜鸟教程的示例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#所感及杂七杂八"><span class="post-toc-number">3.</span> <span class="post-toc-text">所感及杂七杂八</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JAVA学习日记01" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JAVA学习日记01</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-17 21:25:54" datetime="2019-03-17T13:25:54.000Z" itemprop="datePublished">2019-03-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>从今天起关于SQL的学习就高一段路了，又开始了Java的学习，在这之后我觉得我们才可以被称之为Java程序员了，真正接触到Java的一些特性。<br>今天的日记是自学得出的，之后可能会进行修改。</p>
+<hr>
+<a id="more"></a>
+<h2 id="Java继承"><a href="#Java继承" class="headerlink" title="Java继承"></a>Java继承</h2><p><a href="http://www.runoob.com/java/java-inheritance.html" target="_blank" rel="noopener">参阅网页</a></p>
+<hr>
+<h3 id="什么是继承"><a href="#什么是继承" class="headerlink" title="什么是继承"></a>什么是继承</h3><p>继承是Java面向对象技术的基础，他允许创建分等级、层次的类。<br>继承就是子类继承父亲的特征与行为，使得子类对象(方法)具有父类的方法与特征。<br>例如：人类、兔子，树，蘑菇。这四种生物的共同父类为碳基生物，人类与兔子的父类为动物，而树和蘑菇的父类为植物，而动物与植物的父类也是碳基生物，所以继承有<strong>多重性</strong>，可以理解为父类与爷类。<br>简单来说，继承就是几个子类同时使用一个父类的属性(参数)。</p>
+<hr>
+<h3 id="为什么要使用继承"><a href="#为什么要使用继承" class="headerlink" title="为什么要使用继承"></a>为什么要使用继承</h3><p>继承可以简单高效的缩短代码长度，方便后续的修改(只需要更改父类的，子类就跟着会改变)。</p>
+<hr>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class human&#123;</span><br><span class="line">    public String name;</span><br><span class="line">    human()&#123;</span><br><span class="line">        System.out.println(&quot;i am not a bot&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    human(int n)&#123;</span><br><span class="line">        System.out.println(&quot;i am a bot&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    human(String a)&#123;</span><br><span class="line">        System.out.println(&quot;i don&apos;t know&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// human为父类</span><br><span class="line">public  class blogtest&#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        human hm1 = new human();</span><br><span class="line">        human hm2 = new human(1);</span><br><span class="line">        human hm3 = new human(&quot;s&quot;);</span><br><span class="line">        hm1.name=&quot;cat&quot;;</span><br><span class="line">        hm2.name=&quot;dot&quot;;</span><br><span class="line">        System.out.println(hm1.name);</span><br><span class="line">        System.out.println(hm2.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码的执行结果为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i am not a bot</span><br><span class="line">i am a bot</span><br><span class="line">i don&apos;t know</span><br><span class="line">cat</span><br><span class="line">dot</span><br></pre></td></tr></table></figure></p>
+<p>可以看到对human进行赋值？后产生了不同的结果。<br>这里的方法名虽然一样，但返回值设定不同，在执行时，会根据返回值来进行判断。<br>同时可以看到hm1与hm2的name被赋予了不同的两个值</p>
+<hr>
+<h3 id="extends与implement"><a href="#extends与implement" class="headerlink" title="extends与implement"></a>extends与implement</h3><p>在Java中，类的继承是单一继承，也就是说，一个子类只能拥有一个父类。<br>而，implements可以变相的使一个类同时继承多个父类。</p>
+<hr>
+<h2 id="菜鸟教程的示例"><a href="#菜鸟教程的示例" class="headerlink" title="菜鸟教程的示例"></a>菜鸟教程的示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">class SuperClass &#123;</span><br><span class="line">  private int n;</span><br><span class="line">  SuperClass()&#123;</span><br><span class="line">    System.out.println(&quot;SuperClass()&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  SuperClass(int n) &#123;</span><br><span class="line">    System.out.println(&quot;SuperClass(int n)&quot;);</span><br><span class="line">    this.n = n;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// SubClass 类继承</span><br><span class="line">class SubClass extends SuperClass&#123;</span><br><span class="line">  private int n;</span><br><span class="line">  </span><br><span class="line">  SubClass()&#123; // 自动调用父类的无参数构造器</span><br><span class="line">    System.out.println(&quot;SubClass&quot;);</span><br><span class="line">  &#125;  </span><br><span class="line">  </span><br><span class="line">  public SubClass(int n)&#123; </span><br><span class="line">    super(300);  // 调用父类中带有参数的构造器</span><br><span class="line">    System.out.println(&quot;SubClass(int n):&quot;+n);</span><br><span class="line">    this.n = n;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// SubClas2 类继承</span><br><span class="line">class SubClass2 extends SuperClass&#123;</span><br><span class="line">  private int n;</span><br><span class="line">  </span><br><span class="line">  SubClass2()&#123;</span><br><span class="line">    super(300);  // 调用父类中带有参数的构造器</span><br><span class="line">    System.out.println(&quot;SubClass2&quot;);</span><br><span class="line">  &#125;  </span><br><span class="line">  </span><br><span class="line">  public SubClass2(int n)&#123; // 自动调用父类的无参数构造器</span><br><span class="line">    System.out.println(&quot;SubClass2(int n):&quot;+n);</span><br><span class="line">    this.n = n;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class TestSuperSub&#123;</span><br><span class="line">  public static void main (String args[])&#123;</span><br><span class="line">    System.out.println(&quot;------SubClass 类继承------&quot;);</span><br><span class="line">    SubClass sc1 = new SubClass();</span><br><span class="line">    SubClass sc2 = new SubClass(100); </span><br><span class="line">    System.out.println(&quot;------SubClass2 类继承------&quot;);</span><br><span class="line">    SubClass2 sc3 = new SubClass2();</span><br><span class="line">    SubClass2 sc4 = new SubClass2(200); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">------SubClass 类继承------</span><br><span class="line">SuperClass()</span><br><span class="line">SubClass</span><br><span class="line">SuperClass(int n)</span><br><span class="line">SubClass(int n):100</span><br><span class="line">------SubClass2 类继承------</span><br><span class="line">SuperClass(int n)</span><br><span class="line">SubClass2</span><br><span class="line">SuperClass()</span><br><span class="line">SubClass2(int n):200</span><br></pre></td></tr></table></figure></p>
+<p><strong>可以发现，一个语句同时调用了生命是规定的类和那个类的父类，产生了两个输出结果。</strong></p>
+<hr>
+<h2 id="所感及杂七杂八"><a href="#所感及杂七杂八" class="headerlink" title="所感及杂七杂八"></a>所感及杂七杂八</h2><p>这可以说是Java的关键之处,必须要把它搞透彻，多去想想他的意义。<br>今天她穿上了汉服，真的好看，期待一起出去玩。<strong>努力让自己配得上她</strong>。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-03-17T14:41:05.990Z" itemprop="dateUpdated">2019-03-17 22:41:05</time>
+</span><br>
+
+
+        
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.png" alt="HeilantG">
+            HeilantG
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/17/JAVA学习日记01/&title=《JAVA学习日记01》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/17/JAVA学习日记01/&title=《JAVA学习日记01》 — HeilantG's Blog&source=从今天起关于SQL的学习就高一段路了，又开始了Java的学习，在这之后我觉得我们才可以被称之为Java程序员了，真正接触到Java的一些特性。今天的日记是..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/17/JAVA学习日记01/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JAVA学习日记01》 — HeilantG's Blog&url=http://yoursite.com/2019/03/17/JAVA学习日记01/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/17/JAVA学习日记01/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/03/19/JAVA学习日记02/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JAVA学习日记02</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/04/SQL学习日记02/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">SQL学习日记02</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>HeilantG &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/17/JAVA学习日记01/&title=《JAVA学习日记01》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/17/JAVA学习日记01/&title=《JAVA学习日记01》 — HeilantG's Blog&source=从今天起关于SQL的学习就高一段路了，又开始了Java的学习，在这之后我觉得我们才可以被称之为Java程序员了，真正接触到Java的一些特性。今天的日记是..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/17/JAVA学习日记01/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JAVA学习日记01》 — HeilantG's Blog&url=http://yoursite.com/2019/03/17/JAVA学习日记01/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/17/JAVA学习日记01/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/03/17/JAVA学习日记01/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你要走了吗？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

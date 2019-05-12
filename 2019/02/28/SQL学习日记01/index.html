@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>SQL学习日记01 | HeilantG&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#282c34">
+    
+    
+    <meta name="keywords" content="学习,SQL">
+    <meta name="description" content="SQL学习">
+<meta name="keywords" content="学习,SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL学习日记01">
+<meta property="og:url" content="http://yoursite.com/2019/02/28/SQL学习日记01/index.html">
+<meta property="og:site_name" content="HeilantG&#39;s Blog">
+<meta property="og:description" content="SQL学习">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-03T17:10:26.180Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL学习日记01">
+<meta name="twitter:description" content="SQL学习">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">HeilantG</h5>
+          <a href="mailto:gongtongwei@gmail.com" title="gongtongwei@gmail.com" class="mail">gongtongwei@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/HeilantG" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">SQL学习日记01</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">SQL学习日记01</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-28T08:06:21.000Z" itemprop="datePublished" class="page-time">
+  2019-02-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SQL定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">SQL定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础点"><span class="post-toc-number">2.</span> <span class="post-toc-text">基础点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础数据类型"><span class="post-toc-number">3.</span> <span class="post-toc-text">基础数据类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见约束"><span class="post-toc-number">4.</span> <span class="post-toc-text">常见约束</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标识列-自增长"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">标识列/自增长</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础语法"><span class="post-toc-number">5.</span> <span class="post-toc-text">基础语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注释"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">注释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建与删除数据库"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">创建与删除数据库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建"><span class="post-toc-number">5.2.1.</span> <span class="post-toc-text">创建</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除"><span class="post-toc-number">5.2.2.</span> <span class="post-toc-text">删除</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#切换操作数据库"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">切换操作数据库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建表"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">创建表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加约束"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">添加约束</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Select-查找"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">Select 查找</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Insert-插入"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">Insert 插入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Update-修改"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">Update 修改</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除-1"><span class="post-toc-number">5.9.</span> <span class="post-toc-text">删除</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#杂谈"><span class="post-toc-number">6.</span> <span class="post-toc-text">杂谈</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-SQL学习日记01" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">SQL学习日记01</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-02-28 16:06:21" datetime="2019-02-28T08:06:21.000Z" itemprop="datePublished">2019-02-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>我会在这里记录我的SQL学习记录，应该最近回定期更新，内容来源于互联网的各种帖子，已经老师课堂的教授，还有部分我自己的理解。<a id="more"></a></p>
+<h2 id="SQL定义"><a href="#SQL定义" class="headerlink" title="SQL定义"></a>SQL定义</h2><p>SQL是英文Structured Query Language的缩写，意思为结构化查询语言。SQL语言的主要功能就是同各种数据库建立联系，进行沟通。</p>
+<h2 id="基础点"><a href="#基础点" class="headerlink" title="基础点"></a>基础点</h2><p><em>SQL对大小写不敏感</em><br><em>SQL查询或添加中所有汉字需要用单引号包裹</em><br>SQL可以分为两部分：数据操作语言（MDL）和数据定义语言（DDL)<br>SQL主要用来执行查询，而DDl则主要用来更改表格。</p>
+<h2 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h2><p>Char 固定长度非Unicode字符<br>Vachar 可变长度非Unicode字符<br>Text 长文本（最大255个字符）<br>Ntext 可变长度文本（最大长度很大很大）<br>Date/Time 日期/时间（目前还不知道咋用）<br>Bit 布尔值（0/1）<br>Nchar 固定长度Unicode字符<br>Nvchar 可变长度Unicode字符<br>Int 整数<br>Float 浮点数<br><a href="https://baike.baidu.com/item/Unicode" target="_blank" rel="noopener">什么是Unicode?</a></p>
+<p>这写数据类型是用来定义表单中每一项数值的类型。</p>
+<h2 id="常见约束"><a href="#常见约束" class="headerlink" title="常见约束"></a>常见约束</h2><p>主键约束（Primary key constraint）<br>将次字段设置为主键<br>唯一约束（unique constraint）<br>此字段中的值在表中不能有重复的<br>检查约束（check constraint）<br>设定几个检查值，该字段的值必须为设定的值之一<br>默认约束（default constraint）<br>就算不填写这个字段，也会生出一个默认值<br>外键约束（foreign key constraint）<br>将其与另一张表中的一个字段进行连接？且在从表中定义<br>非空约束（not null）<br>该字段必须填写</p>
+<h3 id="标识列-自增长"><a href="#标识列-自增长" class="headerlink" title="标识列/自增长"></a>标识列/自增长</h3><p><em>被设定的字段将不允许被修改</em><br>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名 字段类型 identity(起始值，自增值)</span><br></pre></td></tr></table></figure></p>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- 这是单行注释</span><br><span class="line">/*</span><br><span class="line">这是多行注释</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<h3 id="创建与删除数据库"><a href="#创建与删除数据库" class="headerlink" title="创建与删除数据库"></a>创建与删除数据库</h3><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database &lt;数据库名&gt;</span><br><span class="line">go</span><br></pre></td></tr></table></figure></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop database &lt;数据库名&gt;</span><br><span class="line">go</span><br></pre></td></tr></table></figure></p>
+<p><del>删库跑路</del><br>注意，go必须存在</p>
+<h3 id="切换操作数据库"><a href="#切换操作数据库" class="headerlink" title="切换操作数据库"></a>切换操作数据库</h3><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use &lt;数据库名&gt;</span><br><span class="line">go</span><br></pre></td></tr></table></figure></p>
+<p>用来切换之后指令执行的数据库</p>
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table &lt;表名&gt;</span><br><span class="line">（</span><br><span class="line">    字段名1 数据类型 约束</span><br><span class="line">    字段名2 数据类型 约束</span><br><span class="line">    字段名n 数据类型 约束</span><br><span class="line">）</span><br></pre></td></tr></table></figure></p>
+<h3 id="添加约束"><a href="#添加约束" class="headerlink" title="添加约束"></a>添加约束</h3><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter lable &lt;表名&gt;</span><br><span class="line">add constraint 约束名 约束类型 具体说明</span><br></pre></td></tr></table></figure></p>
+<p>约束名一般为：约束的首字母大写_表名</p>
+<h3 id="Select-查找"><a href="#Select-查找" class="headerlink" title="Select 查找"></a>Select 查找</h3><p>Select语句用来从表中选区数据。结果回输出在一个表中<br>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名称 FROM 表名称</span><br><span class="line">SELECT * FROM 表名称</span><br></pre></td></tr></table></figure></p>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from studentInfo where stuSex=&apos;男&apos;</span><br></pre></td></tr></table></figure></p>
+<p>‘ *’ 表示在当前列下进行查找</p>
+<h3 id="Insert-插入"><a href="#Insert-插入" class="headerlink" title="Insert 插入"></a>Insert 插入</h3><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert [into] &lt;表名&gt; [列名] values &lt;值列表&gt;</span><br></pre></td></tr></table></figure></p>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert students (stuSex,stuName,stuAge) values (男，滑稽，18)，</span><br><span class="line">insert students (tuName) values (滑稽),(大滑稽),(小滑稽)</span><br></pre></td></tr></table></figure></p>
+<p>上面的例子是两种插入方式。<br>注：</p>
+<pre><code>- 字段名顺序要和值顺序一致。
+- 数据类型一一对应。
+- 有非空的字段必须插入数值
+- 必须遵信其他约束
+</code></pre><h3 id="Update-修改"><a href="#Update-修改" class="headerlink" title="Update 修改"></a>Update 修改</h3><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update &lt;表名&gt; set &lt;列明 = 更新值&gt; [where 更新条件]</span><br></pre></td></tr></table></figure></p>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update sutdents set stuSex=&apos;女&apos; where sutSex=&apos;男&apos;</span><br></pre></td></tr></table></figure></p>
+<h3 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h3><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from &lt;表名&gt; [where 条件表达式]</span><br></pre></td></tr></table></figure></p>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from sutdents where stuName=&apos;滑稽&apos;</span><br></pre></td></tr></table></figure></p>
+<h2 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a>杂谈</h2><p>这是这学期开学第一周所学习的SQL基础，真的非常基础，看起来SQL没有什么太过于难思考的地方，现在面临的一个小问题就是这写单词比较难记忆。这毕竟是交互的基础，所有认真一点，不懂就问。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-03-03T17:10:26.180Z" itemprop="dateUpdated">2019-03-04 01:10:26</time>
+</span><br>
+
+
+        
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.png" alt="HeilantG">
+            HeilantG
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/02/28/SQL学习日记01/&title=《SQL学习日记01》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/02/28/SQL学习日记01/&title=《SQL学习日记01》 — HeilantG's Blog&source=我会在这里记录我的SQL学习记录，应该最近回定期更新，内容来源于互联网的各种帖子，已经老师课堂的教授，还有部分我自己的理解。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/02/28/SQL学习日记01/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SQL学习日记01》 — HeilantG's Blog&url=http://yoursite.com/2019/02/28/SQL学习日记01/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/02/28/SQL学习日记01/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/03/04/SQL学习日记02/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">SQL学习日记02</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/02/20/MarkDown的一些用法/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MarkDown的一些用法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>HeilantG &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/02/28/SQL学习日记01/&title=《SQL学习日记01》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/02/28/SQL学习日记01/&title=《SQL学习日记01》 — HeilantG's Blog&source=我会在这里记录我的SQL学习记录，应该最近回定期更新，内容来源于互联网的各种帖子，已经老师课堂的教授，还有部分我自己的理解。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/02/28/SQL学习日记01/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SQL学习日记01》 — HeilantG's Blog&url=http://yoursite.com/2019/02/28/SQL学习日记01/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/02/28/SQL学习日记01/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/02/28/SQL学习日记01/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你要走了吗？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

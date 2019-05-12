@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JAVA学习日记05 | HeilantG&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#282c34">
+    
+    
+    <meta name="keywords" content="学习,Java,JDBC">
+    <meta name="description" content="JAVA学习日记">
+<meta name="keywords" content="学习,Java,JDBC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA学习日记05">
+<meta property="og:url" content="http://yoursite.com/2019/03/26/JAVA学习日记05/index.html">
+<meta property="og:site_name" content="HeilantG&#39;s Blog">
+<meta property="og:description" content="JAVA学习日记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-14T10:46:30.036Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA学习日记05">
+<meta name="twitter:description" content="JAVA学习日记">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">HeilantG</h5>
+          <a href="mailto:gongtongwei@gmail.com" title="gongtongwei@gmail.com" class="mail">gongtongwei@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/HeilantG" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JAVA学习日记05</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JAVA学习日记05</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-26T09:28:40.000Z" itemprop="datePublished" class="page-time">
+  2019-03-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是JDBC？"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是JDBC？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC的使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">JDBC的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接数据库"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">连接数据库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#增删改插语句的执行。"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">增删改插语句的执行。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查询"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">查询</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实例"><span class="post-toc-number">3.</span> <span class="post-toc-text">实例</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JAVA学习日记05" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JAVA学习日记05</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-26 17:28:40" datetime="2019-03-26T09:28:40.000Z" itemprop="datePublished">2019-03-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>今天本来以为上课会继续讲面向对象，然后我就可以继续自己看了，然鹅老师讲了JDBC。<a id="more"></a></p>
+<h2 id="什么是JDBC？"><a href="#什么是JDBC？" class="headerlink" title="什么是JDBC？"></a>什么是JDBC？</h2><p><a href="https://baike.baidu.com/item/jdbc/485214" target="_blank" rel="noopener">JDBC</a>，简单来说，JDBC就是一个允许Java使用SQL的包。SQLserver包的的下载地址是：<a href="https://www.microsoft.com/en-us/download/details.aspx?id=55539" target="_blank" rel="noopener">点我</a></p>
+<hr>
+<h2 id="JDBC的使用"><a href="#JDBC的使用" class="headerlink" title="JDBC的使用"></a>JDBC的使用</h2><h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p>想要连接数据库，首先要保证数据库的TCP/IP协议是打开着的。<br>上代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import java.sql.*;</span><br><span class="line"></span><br><span class="line">class JDBC&#123;</span><br><span class="line">    public static void main(String[] args) throws ClassNotFoundException, SQLException &#123;</span><br><span class="line">        String driver =&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;;</span><br><span class="line">        String url = &quot;jdbc:sqlserver://localhost;databast=shangpin&quot;;</span><br><span class="line">        String name = &quot;sa&quot;;</span><br><span class="line">        String pwd = &quot;123456&quot;;</span><br><span class="line">        Class.forName(driver);</span><br><span class="line">        Connection con = DriverManager.getConnection(url,name,pwd);</span><br><span class="line">        Statement st =  con.createStatement();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>首先自然要导入java.sql.*这个包(当然现在都是自动导入),然后可以看到声明了四个String类型的变量，同时给他们赋予了四个值。<strong>变量名随心情写</strong></p>
+<ul>
+<li>driver：这里面是固定写法，如果你使用的数据库不是SQLserver那么会不一样，里面的内容可以在空白处打个 com. 然后一路自动补全后剪切进去。</li>
+<li>url：这里面的是服务器的地址，以及你想访问的数据库名称。</li>
+<li><p>name：数据库登陆用户名。<br>*pwd：数据库密码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(driver);</span><br><span class="line">Connection con = DriverManager.getConnection(url,name,pwd);</span><br><span class="line">Statement st =  con.createStatement();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>class.forName(driver) 是调用驱动，写上就完了。</p>
+</li>
+<li>第二句后半段：直译过来是驱动程序管理器.获取连接,也就是获取一个可以直接与数据库交互的key。(可以试着输出一下)。而Connection con也就是将这个key保存了起来。</li>
+<li>JDBC中的SQL語句是使用Connection對象的createStatement方法建立的。–某个地方的解释。</li>
+<li>也就是说，sql所有的语句都要利用Statement方法(等于说它是一个抽象类)来执行。</li>
+</ul>
+<hr>
+<h3 id="增删改插语句的执行。"><a href="#增删改插语句的执行。" class="headerlink" title="增删改插语句的执行。"></a>增删改插语句的执行。</h3><p>先看代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String update = &quot; use shangpin INSERT into sp (name,price,text ) VALUES(苹果&apos;,10,&apos;吃&apos;)&quot;;</span><br><span class="line">String delete = &quot;use shangpin delete sp where name=&apos;苹果&apos;&quot;;</span><br><span class="line">st.executeUpdate(update);</span><br></pre></td></tr></table></figure></p>
+<p>我们可以将这段代码这样理解，我们生成了两个String类型的变量，然后使用st.executeUpdate();将String内的内容作为sql文件发送给数据库，再获得返回值。<br><strong>String类的语句就是SQL语句。</strong></p>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>老样子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String select = &quot;use shangpin select * from sp&quot;;</span><br><span class="line">ResultSet rs =st.executeQuery(select);</span><br><span class="line">while (rs.next())&#123;</span><br><span class="line">    int id = rs.getInt(1);</span><br><span class="line">    String name = rs.getString(&quot;name&quot;);</span><br><span class="line">    System.out.println(id+name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用查询时，要使用st.executeQuery();，它会返回查询的值，然后定义一个ResultSet(结果集)用来存储他。<br>查询完毕后肯定是要输出了。这段代码中的while循环就是用来确定输出的，rs.next()是用来判断返回集(rs)的下一行后没有数据，如果有，那就继续执行。<br>int id = rs.getInt(1);这个语句用来将rs这一行的Int数据赋给id,括号内的数字表示取的是表中第几列。<br>这是两种不同的写法，都可以使用<br>rs.getString(“name”)；则是将这一行列名为”name”的值赋给name。<br>切记，不要xjb乱赋数据类型。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import java.sql.*;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class Sc&#123;</span><br><span class="line">    Scanner in = new Scanner(System.in);</span><br><span class="line">    String input;</span><br><span class="line">    public String getInput() &#123;</span><br><span class="line">        return input;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setInput(String input) &#123;</span><br><span class="line">        this.input = input;</span><br><span class="line">    &#125;</span><br><span class="line">    Sc()&#123;</span><br><span class="line">        input=in.next();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class JDBC&#123;</span><br><span class="line">    public static void main(String[] args) throws ClassNotFoundException, SQLException &#123;</span><br><span class="line">            String driver = &quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;;</span><br><span class="line">            String url = &quot;jdbc:sqlserver://localhost;databast=shangpin&quot;;</span><br><span class="line">            String uname = &quot;sa&quot;;</span><br><span class="line">            String pwd = &quot;123456&quot;;</span><br><span class="line">            Class.forName(driver);</span><br><span class="line">            Connection con =  DriverManager.getConnection(url,uname,pwd);</span><br><span class="line">            Statement st = con.createStatement();</span><br><span class="line">            Sc seach = new Sc();</span><br><span class="line">            String sql = &quot;use shangpin select * from sp where name=&apos;&quot;+seach.getInput()+&quot;&apos;&quot;;</span><br><span class="line">            ResultSet out =   st.executeQuery(sql);</span><br><span class="line">            int money = 0;</span><br><span class="line">            String name ;</span><br><span class="line">            while (out.next())&#123;</span><br><span class="line">            money= out.getInt(&quot;price&quot;);</span><br><span class="line">            name = out.getString(&quot;name&quot;);</span><br><span class="line">                System.out.println(&quot;商品名&quot;+name+&quot;价格：&quot;+money);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-04-14T10:46:30.036Z" itemprop="dateUpdated">2019-04-14 18:46:30</time>
+</span><br>
+
+
+        
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.png" alt="HeilantG">
+            HeilantG
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/26/JAVA学习日记05/&title=《JAVA学习日记05》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/26/JAVA学习日记05/&title=《JAVA学习日记05》 — HeilantG's Blog&source=今天本来以为上课会继续讲面向对象，然后我就可以继续自己看了，然鹅老师讲了JDBC。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/26/JAVA学习日记05/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JAVA学习日记05》 — HeilantG's Blog&url=http://yoursite.com/2019/03/26/JAVA学习日记05/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/26/JAVA学习日记05/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/03/27/JDBC学习日记02/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JDBC学习日记02</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/25/JAVA学习日记04/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JAVA学习日记04</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>HeilantG &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/03/26/JAVA学习日记05/&title=《JAVA学习日记05》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/03/26/JAVA学习日记05/&title=《JAVA学习日记05》 — HeilantG's Blog&source=今天本来以为上课会继续讲面向对象，然后我就可以继续自己看了，然鹅老师讲了JDBC。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/03/26/JAVA学习日记05/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JAVA学习日记05》 — HeilantG's Blog&url=http://yoursite.com/2019/03/26/JAVA学习日记05/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/03/26/JAVA学习日记05/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/03/26/JAVA学习日记05/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你要走了吗？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

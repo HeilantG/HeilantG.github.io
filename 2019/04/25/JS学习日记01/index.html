@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JSP学习日记01 | HeilantG&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#282c34">
+    
+    
+    <meta name="keywords" content="学习,JavaScript">
+    <meta name="description" content="JS学习日记">
+<meta name="keywords" content="学习,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP学习日记01">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/JS学习日记01/index.html">
+<meta property="og:site_name" content="HeilantG&#39;s Blog">
+<meta property="og:description" content="JS学习日记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-12T02:48:58.580Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSP学习日记01">
+<meta name="twitter:description" content="JS学习日记">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">HeilantG</h5>
+          <a href="mailto:gongtongwei@gmail.com" title="gongtongwei@gmail.com" class="mail">gongtongwei@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/HeilantG" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JSP学习日记01</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JSP学习日记01</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-25T12:47:26.000Z" itemprop="datePublished" class="page-time">
+  2019-04-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是JavaScript"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是JavaScript</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#书写格式"><span class="post-toc-number">2.</span> <span class="post-toc-text">书写格式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行顺序"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">执行顺序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#外部js文件"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">外部js文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注释和其他的东西"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">注释和其他的东西</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#变量"><span class="post-toc-number">3.</span> <span class="post-toc-text">变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调试方法"><span class="post-toc-number">4.</span> <span class="post-toc-text">调试方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型转换"><span class="post-toc-number">5.</span> <span class="post-toc-text">类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#伪对象"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">伪对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型转换-1"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#转字符串"><span class="post-toc-number">5.2.1.</span> <span class="post-toc-text">转字符串</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#数字转字符串"><span class="post-toc-number">5.2.1.1.</span> <span class="post-toc-text">数字转字符串</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#转换为数字"><span class="post-toc-number">5.2.2.</span> <span class="post-toc-text">转换为数字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#转换为布尔值"><span class="post-toc-number">5.2.3.</span> <span class="post-toc-text">转换为布尔值</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数"><span class="post-toc-number">6.</span> <span class="post-toc-text">函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#作用域"><span class="post-toc-number">7.</span> <span class="post-toc-text">作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运算符"><span class="post-toc-number">8.</span> <span class="post-toc-text">运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#算数运算符"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">算数运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#逻辑运算符"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">逻辑运算符</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#条件语句"><span class="post-toc-number">9.</span> <span class="post-toc-text">条件语句</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#循环语句"><span class="post-toc-number">10.</span> <span class="post-toc-text">循环语句</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#错误处理"><span class="post-toc-number">11.</span> <span class="post-toc-text">错误处理</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JS学习日记01" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JSP学习日记01</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-25 20:47:26" datetime="2019-04-25T12:47:26.000Z" itemprop="datePublished">2019-04-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>开始学习JavaScript.<a id="more"></a></p>
+<h2 id="什么是JavaScript"><a href="#什么是JavaScript" class="headerlink" title="什么是JavaScript"></a>什么是JavaScript</h2><p>JavaScript(一下简称JSP)是一种轻量级的编程语言,它可以被嵌入HTML页面之中.<br>JSP通常用于网页与用户之间的交互,比如提交表单的时候,判断某些数值是否为空.</p>
+<h2 id="书写格式"><a href="#书写格式" class="headerlink" title="书写格式"></a>书写格式</h2><p>JSP代码必须放在script标签之中,script标签可以放在html的任何地方,一般建议放在head标签之中.<br>像这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            document.write(&quot;这是 JavaScript&quot;)</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h3><p>如果有多段jsp代码,回按照从上到下,顺序执行.</p>
+<h3 id="外部js文件"><a href="#外部js文件" class="headerlink" title="外部js文件"></a>外部js文件</h3><p>如同CSS一样,jsp也可以被剥离出来,单独放在一个文件里.引用的时候使用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;script src=&quot;./js/XXX.js&quot;&gt;&lt;script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="注释和其他的东西"><a href="#注释和其他的东西" class="headerlink" title="注释和其他的东西"></a>注释和其他的东西</h3><p>注释方式与Java相同.</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>jsp之中,声明变量使用 var 关键字,jsp中变量的类型像py一样,不需要在声名的时候指定,它自己回随着被赋予的值而变化为五种基本数据类型之一.</p>
+<ul>
+<li>关键字 意义</li>
+<li>var 动态类型</li>
+<li>undefined 声明但未赋值</li>
+<li>Boolean 布尔</li>
+<li>String 字符串</li>
+<li>null 空对象/对象不存在</li>
+<li>typeof 用于变量类型判断(这是一个方法).<h2 id="调试方法"><a href="#调试方法" class="headerlink" title="调试方法"></a>调试方法</h2>jsp没有专用的IDE.再加上它的特性,导致了他即使报错,在页面上也不一定能看到.<br>这时,可以使用 alert 方法进行调试.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(1);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>alert 可以使浏览器弹出一个警告创口,以这个特性,我们就可以确定程序已经执行到了哪一步.<br>同时,浏览器的F12控制台之中,可以看到报错的地点.</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="伪对象"><a href="#伪对象" class="headerlink" title="伪对象"></a>伪对象</h3><p>jsp有一个特征,就是即使是基本类型,也是伪对象,所以他们都有属性和方法.<br>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var a = &quot;hellow&quot;;</span><br><span class="line">    document.write(&quot;变量a的类型是:&quot;+(typeof a));</span><br><span class="line">    document.write(&quot;变量a的长度是:&quot;+a.length);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="类型转换-1"><a href="#类型转换-1" class="headerlink" title="类型转换"></a>类型转换</h3><p>不论是Number,Boolean,还是String都有一个toString方法.</p>
+<h4 id="转字符串"><a href="#转字符串" class="headerlink" title="转字符串"></a>转字符串</h4><p>String(),toString()都会返回字符串.区别在于对null的处理<br>String()会返回字符串”null”.toString()则会报错,无法执行</p>
+<h5 id="数字转字符串"><a href="#数字转字符串" class="headerlink" title="数字转字符串"></a>数字转字符串</h5><p>Number.toString(x),可以给定进制X;</p>
+<h4 id="转换为数字"><a href="#转换为数字" class="headerlink" title="转换为数字"></a>转换为数字</h4><p>parseInt(E),方法,可以将变量转换为数字.如果是一个同时拥有字符与数字的变量,它只会保留第一个数字.也就是说”1a2b3c”会变为”1”.但是如果以非数字开头,会返回NaN<br>Number(),方法,也可以转换,但是当转换的内容包含非数字的时候,会返回NaN</p>
+<h4 id="转换为布尔值"><a href="#转换为布尔值" class="headerlink" title="转换为布尔值"></a>转换为布尔值</h4><p>Boolean(),方法,可以转换为布尔值.</p>
+<ul>
+<li>当转换字符串时: 非空为true</li>
+<li>当转换数字时: 非0为true</li>
+<li>当转换对象时: 非null为true<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2>不多说,看代码:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function hanshu(x)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>函数最常用的调用方式,是按钮调用,像这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;hanshu(1)&quot;&gt;按我&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>作用域仅限于一个函数,超出函数就看不到了(可以声名全局变量,取决于你把它放哪).</p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><ul>
+<li><ul>
+<li><ul>
+<li>/ % 加减乘除 取余<br>– ** 自增自减<br>= += -= -= /= %= 赋值运算符</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>经常会使数字运算变成字符串拼接.所以最好提前对被运算数据进行parseInt()转换为数字.<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3>== != &gt; &gt;= &lt; &lt;= 基本<br>=== !== 绝对等/不等<br>看代码:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var x = 1;</span><br><span class="line">var y = &quot;1&quot;;</span><br><span class="line">var z = x===y;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>z最后的值是否,因为数据类型不同<br>?: 三目运算符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var x = 9;</span><br><span class="line">var y = x&lt;10? &quot;小于&quot;:&quot;大于&quot;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><p>同JAVA</p>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p>同JAVA</p>
+<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><p>同JAVA(try catch)</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-05-12T02:48:58.580Z" itemprop="dateUpdated">2019-05-12 10:48:58</time>
+</span><br>
+
+
+        
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.png" alt="HeilantG">
+            HeilantG
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/25/JS学习日记01/&title=《JSP学习日记01》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/25/JS学习日记01/&title=《JSP学习日记01》 — HeilantG's Blog&source=开始学习JavaScript." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/25/JS学习日记01/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSP学习日记01》 — HeilantG's Blog&url=http://yoursite.com/2019/04/25/JS学习日记01/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/25/JS学习日记01/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/12/JSP学习日记01/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JSP学习日记01</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/14/JAVA常用类/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JAVA常用类</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>HeilantG &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/04/25/JS学习日记01/&title=《JSP学习日记01》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/25/JS学习日记01/&title=《JSP学习日记01》 — HeilantG's Blog&source=开始学习JavaScript." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/04/25/JS学习日记01/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSP学习日记01》 — HeilantG's Blog&url=http://yoursite.com/2019/04/25/JS学习日记01/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/04/25/JS学习日记01/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/04/25/JS学习日记01/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你要走了吗？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
