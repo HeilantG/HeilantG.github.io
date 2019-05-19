@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JSP学习日记02 | HeilantG&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#282c34">
+    
+    
+    <meta name="keywords" content="学习,JSP">
+    <meta name="description" content="JSP学习日记">
+<meta name="keywords" content="学习,JSP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP学习日记02">
+<meta property="og:url" content="http://yoursite.com/2019/05/19/JSP学习日记02/index.html">
+<meta property="og:site_name" content="HeilantG&#39;s Blog">
+<meta property="og:description" content="JSP学习日记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-19T07:42:28.566Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSP学习日记02">
+<meta name="twitter:description" content="JSP学习日记">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">HeilantG</h5>
+          <a href="mailto:gongtongwei@gmail.com" title="gongtongwei@gmail.com" class="mail">gongtongwei@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/HeilantG" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JSP学习日记02</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JSP学习日记02</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-19T05:59:51.000Z" itemprop="datePublished" class="page-time">
+  2019-05-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器跳转的两种方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">浏览器跳转的两种方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSP页面的一些语法"><span class="post-toc-number">2.</span> <span class="post-toc-text">JSP页面的一些语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入代码"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">插入代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP指令"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">JSP指令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSP-四个作用域"><span class="post-toc-number">3.</span> <span class="post-toc-text">JSP 四个作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSP-九大隐式对象-内置对象"><span class="post-toc-number">4.</span> <span class="post-toc-text">JSP 九大隐式对象(内置对象)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Servlet-生命周期"><span class="post-toc-number">5.</span> <span class="post-toc-text">Servlet 生命周期</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Servlet-Request-接口"><span class="post-toc-number">6.</span> <span class="post-toc-text">Servlet Request 接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#杂七杂八"><span class="post-toc-number">7.</span> <span class="post-toc-text">杂七杂八</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JSP学习日记02" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JSP学习日记02</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-19 13:59:51" datetime="2019-05-19T05:59:51.000Z" itemprop="datePublished">2019-05-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/学习相关/">学习相关</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>这是JSP学习第二周的笔记<a id="more"></a>,最近越发的懒,而且有点浑浑噩噩的.主要是作息时间的严重不规范,现在是下午的两点,我的头还是晕晕乎乎的.这周学的东西挺多,可以说让我们彻底摆脱了控制台.因为文字描述肯定不是很确切,所以可能会有大量的代码块.</p>
+<h2 id="浏览器跳转的两种方式"><a href="#浏览器跳转的两种方式" class="headerlink" title="浏览器跳转的两种方式"></a>浏览器跳转的两种方式</h2><ul>
+<li>转发   发起一次请求    浏览器不知道变化    地址不改变</li>
+<li>重定向  发起两次请求      浏览器知道变化      地址改变,生成新请求<h2 id="JSP页面的一些语法"><a href="#JSP页面的一些语法" class="headerlink" title="JSP页面的一些语法"></a>JSP页面的一些语法</h2><h3 id="插入代码"><a href="#插入代码" class="headerlink" title="插入代码"></a>插入代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">HTML文本    //静态内容</span><br><span class="line">&lt;%  %&gt;      //指令</span><br><span class="line">&lt;%= JAVA表达式 %&gt;       //表达</span><br><span class="line">&lt;% JAVA代码 %&gt;      //小脚本</span><br><span class="line">&lt;! &gt;        //声明</span><br><span class="line">&lt;! --&gt;      //客户端可见注释</span><br><span class="line">&lt;%-- --%&gt;   //客户端不可见注释</span><br><span class="line">$&#123;message&#125;  //EL表达式,message为从后台传输过来的值,如果为null,则不显示</span><br><span class="line">&lt;a href=&quot;&lt;%= request.getContextPath() %&gt;/stuServlet?type=findall&quot;&gt;查找所用用戶&lt;/a&gt;</span><br><span class="line">获取目前项目路径(Servlet所在的一级)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="JSP指令"><a href="#JSP指令" class="headerlink" title="JSP指令"></a>JSP指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">include 在JSP文件转换为Servlet时引入其他文件</span><br><span class="line">page 用来完成:导入指定的类,自定义Servle的超类?</span><br><span class="line">taglib 引入其他标签库</span><br><span class="line">&lt;%@ taglib  uri=&quot;tag library URI&quot;(标记库地址) prefix=&quot;tag prefix&quot;(自定义名称)&gt;</span><br><span class="line">errorPage 错误页面 isErrorPage=&quot;false&quot;是否可以作为错误页面</span><br><span class="line">&lt;%@ page language=&quot;java&quot; XX XX XX&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="JSP-四个作用域"><a href="#JSP-四个作用域" class="headerlink" title="JSP 四个作用域"></a>JSP 四个作用域</h2><ul>
+<li>page  当前页      本页面</li>
+<li>request 请求      本次请求</li>
+<li>session 会话      当前会话        同一用户多次请求</li>
+<li>application 应用程序      整个应用        当前项目范围<h2 id="JSP-九大隐式对象-内置对象"><a href="#JSP-九大隐式对象-内置对象" class="headerlink" title="JSP 九大隐式对象(内置对象)"></a>JSP 九大隐式对象(内置对象)</h2><a href="https://www.runoob.com/jsp/jsp-implicit-objects.html" target="_blank" rel="noopener">隐式对象</a><h2 id="Servlet-生命周期"><a href="#Servlet-生命周期" class="headerlink" title="Servlet 生命周期"></a>Servlet 生命周期</h2></li>
+<li>实例化:Tomcat启动时或Servlet第一次被访问</li>
+<li>初始化:该容器调用init()方法</li>
+<li>服务:如果请求Servlet,则容器调用Service()方法</li>
+<li>销毁:销毁实例前调用destroy()方法(Tomcat停止时)<h2 id="Servlet-Request-接口"><a href="#Servlet-Request-接口" class="headerlink" title="Servlet Request 接口"></a>Servlet Request 接口</h2></li>
+<li>Object getAttribute(String name) 根据name属性名返回属性值(得到参数)</li>
+<li>String getParameter(String name) 根据给定参数返回参数值,得到浏览器提交的参数</li>
+<li>Void setAttribute(String name , Object object) 像浏览器传输Obje类型的数据,数据名字设定为name</li>
+<li>request.getRequestDispatcher(“index.jsp”).forward(request, response) 跳转</li>
+<li>request.setCharacterEncoding(“UTF-8”) 设定字符编码集<h2 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h2>最近感觉有点暴躁,易燃易爆炸,努力纠正自己的心态把.</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-05-19T07:42:28.566Z" itemprop="dateUpdated">2019-05-19 15:42:28</time>
+</span><br>
+
+
+        
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.png" alt="HeilantG">
+            HeilantG
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/05/19/JSP学习日记02/&title=《JSP学习日记02》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/05/19/JSP学习日记02/&title=《JSP学习日记02》 — HeilantG's Blog&source=这是JSP学习第二周的笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/05/19/JSP学习日记02/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSP学习日记02》 — HeilantG's Blog&url=http://yoursite.com/2019/05/19/JSP学习日记02/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/05/19/JSP学习日记02/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/05/12/JSP学习日记01/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JSP学习日记01</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>HeilantG &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/05/19/JSP学习日记02/&title=《JSP学习日记02》 — HeilantG's Blog&pic=http://yoursite.com/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/05/19/JSP学习日记02/&title=《JSP学习日记02》 — HeilantG's Blog&source=这是JSP学习第二周的笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/05/19/JSP学习日记02/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSP学习日记02》 — HeilantG's Blog&url=http://yoursite.com/2019/05/19/JSP学习日记02/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/05/19/JSP学习日记02/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/05/19/JSP学习日记02/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你要走了吗？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
