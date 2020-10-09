@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="HeilantG , gongtongwei@gmail.com"><title>JAVA常用类 · 支配的小窝</title><meta name="description" content="这篇博客可能会长期更改并且更新，内容为JAVA常用类。
+如果对哪个类的用法不清楚或者不知道是干嘛的，可以直接按着Ctrl然后点那个类，直接去看源文件。
+StringString 是一个非常常用的数据类型。String类型中的常用方法如下：
+
+.lengh() 获取数组的长度，返回值为int。
+.ch"><meta name="keywords" content="支配的小窝"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><!-- <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />--><link rel="icon" href="/images/favicon.ico" type="image/x-icon"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">支配的小窝</a></h3><div class="description"><p>当时立在山顶,勿忘顶上为星。<br> :D.</p></div></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/HeilantG"><i class="fa fa-github"></i></a></li><li><a href="mailto://gongtongwei@gmail.com"><i class="fa fa-envelope"></i></a></li></ul><div class="footer"><div class="p"> <span>© 2018 - 2020 </span><i class="fa fa-star"></i><span> HeilantG , gongtongwei@gmail.com</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><a href="https://github.com/mrcore/hexo-theme-Anatole-Core" target="_blank">Anatole-Core  </a></div><div class="beian"><span>陕ICP备20005123号</span><span style="height:10px;margin-left: 10px;"></span></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li><li><a href="/tags">标签</a></li><li><a href="/about">关于</a></li><li><a href="/guestbook">留言</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>JAVA常用类</a></h3></div><div class="post-content"><p>这篇博客可能会长期更改并且更新，内容为JAVA常用类。<a id="more"></a></p>
+<p>如果对哪个类的用法不清楚或者不知道是干嘛的，可以直接按着Ctrl然后点那个类，直接去看源文件。</p>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>String 是一个非常常用的数据类型。String类型中的常用方法如下：</p>
+<ul>
+<li>.lengh() 获取数组的长度，返回值为int。</li>
+<li>.charAt(int) 根据下标查找字符。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name &#x3D; &quot;HeilantG&quot;;</span><br><span class="line">name.charAt(2);</span><br></pre></td></tr></table></figure>
+charAt会返回所给下标的字符，也就是说上面的代码会返回第三位i(第一位是0)。</li>
+<li>.indexOf(all) 根据字符查找下标(<em>从左向右</em>找到该字符第一次出现的下标)。用法和charAt()相同。</li>
+<li>.lastindexOf(all) 根据字符查找下标，不过是<em>从右向左</em>找。</li>
+<li>.replace(String oldStr , String new Str) 字符替换。然后返回一个String类型的数据(并不是改变原数据)。</li>
+<li>*需要注意的是，replace并不会改变原来的String数据。**</li>
+<li>.split(String str) 使用指定的字符，分割字符串，得到字符串数组。<br>先看代码:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name &#x3D; &quot;aaa*bbb*ccc&quot;;</span><br><span class="line">String [] out&#x3D; name.split(&quot;\\*&quot;);</span><br></pre></td></tr></table></figure>
+可以看到这里需要使用*来分割数组。可是它又是特殊字符，这时就必须使用转义后再分割，分割后的数字中不会有分割字符，也就说out[0]中的字符为aaa，out[1]中字符为bbb。</li>
+<li>.concat(String str) 字符串拼接。返回一个String类型。<br>在拼接过程中，( ) 内的数组会被放在前面。</li>
+<li>.contains(String str) 字符串是否包含指定字符，返回Boolean类型。</li>
+<li>.equals(“”,String str) 比较字符串是否相等，返回Boolean类型。</li>
+<li>.subString(int beginIndex,int endIndex) 从制定下标开始截取到指定位置，如果不写结束位置，会截取到结束。</li>
+<li>.toLowerCase() .toUpperCase() 转换大小写。<h3 id="StringBuffer和StringBuilder"><a href="#StringBuffer和StringBuilder" class="headerlink" title="StringBuffer和StringBuilder"></a>StringBuffer和StringBuilder</h3>当字符串需要被修改(增改插)时，一般的String类已经不能满足要求，这时就需要使用StringBuffer和StringBuilder类，他们和String不同的是，可以被多次修改，且不产生新的对象(直接修改，而不是返回值)。<br>多数情况下使用StringBuilder，但是在要求安全时，使用StringBuffer。下面几个时他们拥有的新方法。</li>
+<li>.append(String str) 将制定的字符串追加到此字符序列。</li>
+<li>.reverse() 反转该字符串。</li>
+<li>.delete(int start,int end) 移除此序列的子字符串中的字符。</li>
+<li>.insert(int set,String str) 插入字符串，插入位置由Int指示。</li>
+<li>.replace(int start,int end ,String str) 使用String中的字符替换由start、end提供下标所指定位置的字符。<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2></li>
+<li>.abs() 绝对值</li>
+<li>.round() 四舍五入</li>
+<li>.ceil() 向上取整</li>
+<li>.floor() 向下取整</li>
+<li>.random() 随机数<h2 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h2>Random会创建一个随机数生成器，在创建时我们可以给他制定一个种子，总而达到虽然是随机，但是每次随机值都为固定。不多说，上代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Random r1 &#x3D; new Random(2);</span><br><span class="line">int i &#x3D; r1.nextInt(10);</span><br><span class="line">System.out.println(i);</span><br></pre></td></tr></table></figure>
+第一行给予了种子 2 ，之后r1.nextInt(10),就是给与随机数区间。可以看到，不论随机几遍，随机出的数字都是固定的.</li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-04-14</span><i class="fa fa-tag"></i><a class="tag" href="/categories/学习相关/" title="学习相关">学习相关 </a><a class="tag" href="/tags/学习/" title="学习">学习 </a><a class="tag" href="/tags/Java/" title="Java">Java </a><span class="leancloud_visitors"></span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2019/04/14/java/JAVA常用类/,支配的小窝,JAVA常用类,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/04/25/jsp/JS%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B001/" title="Javascript学习日记01">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/04/10/java/JAVA%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B007/" title="JAVA学习日记07">下一篇</a></li></ul></div><script src="/js/visitors.js"></script><a id="comments"></a><div id="vcomments" style="margin:0 30px;"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js"></script><script>var valine = new Valine({
+  el:'#vcomments',
+  notify:true || false, 
+  verify:true|| false, 
+  app_id:'',
+  app_key:'',
+  placeholder:'Just go go',
+  path: window.location.pathname,
+  serverURLs: '',
+  visitor:true,
+  recordIP:true,
+  avatar: 'mm'
+})</script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-tororo"},"display":{"position":"left","width":200,"height":400,"hOffset":5,"vOffset":-38},"mobile":{"show":false,"scale":0.2},"react":{"opacityDefault":0.8,"opacityOnHover":0.2},"log":false});</script></body></html>
